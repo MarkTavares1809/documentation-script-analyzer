@@ -1,0 +1,10 @@
+1)comparison_results.json contains the detailed comparison between the documentation and automation scripts.Serialized to json format from comparator.py
+
+2) summary_report.json aggregates those comparisons into package-level and overall statistics. Serialized to json format from summary_report.py
+
+ 3)ai_analysis.json  
+ Llama 3.2 model through Ollama to explain the detected differences in natural language. Serialized to json format from ai_analyzer.py
+
+The full guide to run the project is on README
+
+usage of ai in this project: I used AI in the analysis stage. After Python compares the documentation and scripts, I send the detected differences to a local Llama 3.2 model through Ollama, which interprets those differences and generates a natural-language explanation in ai_analysis.json  

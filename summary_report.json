@@ -1,0 +1,1055 @@
+{
+    "project": "AI-Powered Documentation-Script Consistency Analyzer",
+    "total_packages": 80,
+    "total_script_versions": 1618,
+    "wiki_pages_found": 80,
+    "wiki_pages_missing": 0,
+    "global_statistics": {
+        "consistent": 0,
+        "partial_discrepancy": 47,
+        "version_mismatch": 1062,
+        "not_documented": 509
+    },
+    "package_summaries": [
+        {
+            "package": "Alfresco",
+            "script_versions_analyzed": 11,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 10,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 11,
+            "versions_with_command_issues": 11
+        },
+        {
+            "package": "AntLR",
+            "script_versions_analyzed": 3,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 3
+            },
+            "versions_with_dependency_issues": 3,
+            "versions_with_command_issues": 3
+        },
+        {
+            "package": "ApacheCassandra",
+            "script_versions_analyzed": 23,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 23
+            },
+            "versions_with_dependency_issues": 23,
+            "versions_with_command_issues": 23
+        },
+        {
+            "package": "ApacheHttpServer",
+            "script_versions_analyzed": 24,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 24
+            },
+            "versions_with_dependency_issues": 24,
+            "versions_with_command_issues": 24
+        },
+        {
+            "package": "ApacheKafka",
+            "script_versions_analyzed": 6,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 6
+            },
+            "versions_with_dependency_issues": 6,
+            "versions_with_command_issues": 6
+        },
+        {
+            "package": "ApacheSpark",
+            "script_versions_analyzed": 12,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 12
+            },
+            "versions_with_dependency_issues": 12,
+            "versions_with_command_issues": 12
+        },
+        {
+            "package": "Apigility",
+            "script_versions_analyzed": 1,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 1
+            },
+            "versions_with_dependency_issues": 1,
+            "versions_with_command_issues": 1
+        },
+        {
+            "package": "Bazel",
+            "script_versions_analyzed": 29,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 28,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 29,
+            "versions_with_command_issues": 29
+        },
+        {
+            "package": "Beats",
+            "script_versions_analyzed": 44,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 43,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 44,
+            "versions_with_command_issues": 44
+        },
+        {
+            "package": "BoringSSL",
+            "script_versions_analyzed": 1,
+            "overall_status": "partial_discrepancy",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 0,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 0,
+            "versions_with_command_issues": 1
+        },
+        {
+            "package": "CFSSL",
+            "script_versions_analyzed": 7,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 7
+            },
+            "versions_with_dependency_issues": 7,
+            "versions_with_command_issues": 7
+        },
+        {
+            "package": "Calico",
+            "script_versions_analyzed": 24,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 24
+            },
+            "versions_with_dependency_issues": 24,
+            "versions_with_command_issues": 24
+        },
+        {
+            "package": "CloudStack",
+            "script_versions_analyzed": 2,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 2
+            },
+            "versions_with_dependency_issues": 2,
+            "versions_with_command_issues": 2
+        },
+        {
+            "package": "Consul",
+            "script_versions_analyzed": 61,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 60,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 61,
+            "versions_with_command_issues": 61
+        },
+        {
+            "package": "CouchDB",
+            "script_versions_analyzed": 11,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 10,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 11,
+            "versions_with_command_issues": 11
+        },
+        {
+            "package": "Couchbase",
+            "script_versions_analyzed": 7,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 6,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 7,
+            "versions_with_command_issues": 7
+        },
+        {
+            "package": "CruiseControl",
+            "script_versions_analyzed": 20,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 20
+            },
+            "versions_with_dependency_issues": 20,
+            "versions_with_command_issues": 20
+        },
+        {
+            "package": "Doxygen",
+            "script_versions_analyzed": 12,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 11,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 12,
+            "versions_with_command_issues": 12
+        },
+        {
+            "package": "Elasticsearch",
+            "script_versions_analyzed": 33,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 32,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 33,
+            "versions_with_command_issues": 33
+        },
+        {
+            "package": "Envoy",
+            "script_versions_analyzed": 6,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 5,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 6,
+            "versions_with_command_issues": 6
+        },
+        {
+            "package": "Erlang",
+            "script_versions_analyzed": 50,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 49,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 16,
+            "versions_with_command_issues": 50
+        },
+        {
+            "package": "Falco",
+            "script_versions_analyzed": 27,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 26,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 27,
+            "versions_with_command_issues": 27
+        },
+        {
+            "package": "Fluentd",
+            "script_versions_analyzed": 51,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 50,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 51,
+            "versions_with_command_issues": 51
+        },
+        {
+            "package": "GlusterFS",
+            "script_versions_analyzed": 17,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 16,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 17,
+            "versions_with_command_issues": 17
+        },
+        {
+            "package": "Go",
+            "script_versions_analyzed": 21,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 21
+            },
+            "versions_with_dependency_issues": 21,
+            "versions_with_command_issues": 21
+        },
+        {
+            "package": "HAProxy",
+            "script_versions_analyzed": 56,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 55,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 56,
+            "versions_with_command_issues": 56
+        },
+        {
+            "package": "HBase",
+            "script_versions_analyzed": 1,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 1
+            },
+            "versions_with_dependency_issues": 1,
+            "versions_with_command_issues": 1
+        },
+        {
+            "package": "Heketi",
+            "script_versions_analyzed": 2,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 2
+            },
+            "versions_with_dependency_issues": 2,
+            "versions_with_command_issues": 2
+        },
+        {
+            "package": "Helm",
+            "script_versions_analyzed": 10,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 10
+            },
+            "versions_with_dependency_issues": 10,
+            "versions_with_command_issues": 10
+        },
+        {
+            "package": "Hiredis",
+            "script_versions_analyzed": 1,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 1
+            },
+            "versions_with_dependency_issues": 1,
+            "versions_with_command_issues": 1
+        },
+        {
+            "package": "Htop",
+            "script_versions_analyzed": 15,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 14,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 15,
+            "versions_with_command_issues": 15
+        },
+        {
+            "package": "InfluxDB",
+            "script_versions_analyzed": 27,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 26,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 27,
+            "versions_with_command_issues": 27
+        },
+        {
+            "package": "Istio",
+            "script_versions_analyzed": 5,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 5
+            },
+            "versions_with_dependency_issues": 5,
+            "versions_with_command_issues": 5
+        },
+        {
+            "package": "IstioProxy",
+            "script_versions_analyzed": 5,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 5
+            },
+            "versions_with_dependency_issues": 5,
+            "versions_with_command_issues": 5
+        },
+        {
+            "package": "Keystone",
+            "script_versions_analyzed": 12,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 11,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 12,
+            "versions_with_command_issues": 12
+        },
+        {
+            "package": "Kibana",
+            "script_versions_analyzed": 27,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 26,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 27,
+            "versions_with_command_issues": 27
+        },
+        {
+            "package": "Kind",
+            "script_versions_analyzed": 8,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 7,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 6,
+            "versions_with_command_issues": 8
+        },
+        {
+            "package": "Knative",
+            "script_versions_analyzed": 2,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 2
+            },
+            "versions_with_dependency_issues": 2,
+            "versions_with_command_issues": 2
+        },
+        {
+            "package": "Kong",
+            "script_versions_analyzed": 2,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 1,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 2,
+            "versions_with_command_issues": 2
+        },
+        {
+            "package": "Logstash",
+            "script_versions_analyzed": 63,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 62,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 63,
+            "versions_with_command_issues": 63
+        },
+        {
+            "package": "MariaDB",
+            "script_versions_analyzed": 27,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 27
+            },
+            "versions_with_dependency_issues": 27,
+            "versions_with_command_issues": 27
+        },
+        {
+            "package": "MariaDB-Connector-ODBC",
+            "script_versions_analyzed": 21,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 20,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 21,
+            "versions_with_command_issues": 21
+        },
+        {
+            "package": "Minikube",
+            "script_versions_analyzed": 9,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 9
+            },
+            "versions_with_dependency_issues": 9,
+            "versions_with_command_issues": 9
+        },
+        {
+            "package": "MySQL",
+            "script_versions_analyzed": 64,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 64
+            },
+            "versions_with_dependency_issues": 64,
+            "versions_with_command_issues": 64
+        },
+        {
+            "package": "NGINX",
+            "script_versions_analyzed": 19,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 18,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 19,
+            "versions_with_command_issues": 19
+        },
+        {
+            "package": "NGINX-ingress-controller",
+            "script_versions_analyzed": 19,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 18,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 5,
+            "versions_with_command_issues": 19
+        },
+        {
+            "package": "NobleHashes",
+            "script_versions_analyzed": 2,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 2
+            },
+            "versions_with_dependency_issues": 2,
+            "versions_with_command_issues": 2
+        },
+        {
+            "package": "OPA",
+            "script_versions_analyzed": 31,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 30,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 31,
+            "versions_with_command_issues": 31
+        },
+        {
+            "package": "OpenResty",
+            "script_versions_analyzed": 17,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 16,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 14,
+            "versions_with_command_issues": 17
+        },
+        {
+            "package": "PHP",
+            "script_versions_analyzed": 48,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 47,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 15,
+            "versions_with_command_issues": 48
+        },
+        {
+            "package": "PostgreSQL",
+            "script_versions_analyzed": 65,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 65
+            },
+            "versions_with_dependency_issues": 65,
+            "versions_with_command_issues": 65
+        },
+        {
+            "package": "Protobuf",
+            "script_versions_analyzed": 13,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 13
+            },
+            "versions_with_dependency_issues": 13,
+            "versions_with_command_issues": 13
+        },
+        {
+            "package": "Puppet",
+            "script_versions_analyzed": 24,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 23,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 24,
+            "versions_with_command_issues": 24
+        },
+        {
+            "package": "Python2",
+            "script_versions_analyzed": 2,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 2
+            },
+            "versions_with_dependency_issues": 2,
+            "versions_with_command_issues": 2
+        },
+        {
+            "package": "Python3",
+            "script_versions_analyzed": 53,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 53
+            },
+            "versions_with_dependency_issues": 53,
+            "versions_with_command_issues": 53
+        },
+        {
+            "package": "R",
+            "script_versions_analyzed": 25,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 24,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 23,
+            "versions_with_command_issues": 25
+        },
+        {
+            "package": "RabbitMQ",
+            "script_versions_analyzed": 51,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 50,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 51,
+            "versions_with_command_issues": 51
+        },
+        {
+            "package": "RethinkDB",
+            "script_versions_analyzed": 4,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 3,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 4,
+            "versions_with_command_issues": 4
+        },
+        {
+            "package": "RocksDB",
+            "script_versions_analyzed": 3,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 3
+            },
+            "versions_with_dependency_issues": 3,
+            "versions_with_command_issues": 3
+        },
+        {
+            "package": "Ruby",
+            "script_versions_analyzed": 40,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 39,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 34,
+            "versions_with_command_issues": 40
+        },
+        {
+            "package": "SaltStack",
+            "script_versions_analyzed": 7,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 6,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 7,
+            "versions_with_command_issues": 7
+        },
+        {
+            "package": "ScyllaDB",
+            "script_versions_analyzed": 13,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 12,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 13,
+            "versions_with_command_issues": 13
+        },
+        {
+            "package": "SonarQube",
+            "script_versions_analyzed": 48,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 47,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 48,
+            "versions_with_command_issues": 48
+        },
+        {
+            "package": "Spire",
+            "script_versions_analyzed": 27,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 26,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 18,
+            "versions_with_command_issues": 27
+        },
+        {
+            "package": "Statsd",
+            "script_versions_analyzed": 5,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 4,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 5,
+            "versions_with_command_issues": 5
+        },
+        {
+            "package": "Sysdig",
+            "script_versions_analyzed": 17,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 16,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 17,
+            "versions_with_command_issues": 17
+        },
+        {
+            "package": "Tensorflow",
+            "script_versions_analyzed": 13,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 12,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 13,
+            "versions_with_command_issues": 13
+        },
+        {
+            "package": "TensorflowServing",
+            "script_versions_analyzed": 8,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 8
+            },
+            "versions_with_dependency_issues": 8,
+            "versions_with_command_issues": 8
+        },
+        {
+            "package": "TensorflowTransform",
+            "script_versions_analyzed": 8,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 8
+            },
+            "versions_with_dependency_issues": 8,
+            "versions_with_command_issues": 8
+        },
+        {
+            "package": "V8JavaScript",
+            "script_versions_analyzed": 11,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 11
+            },
+            "versions_with_dependency_issues": 11,
+            "versions_with_command_issues": 11
+        },
+        {
+            "package": "XMLSec",
+            "script_versions_analyzed": 12,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 11,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 12,
+            "versions_with_command_issues": 12
+        },
+        {
+            "package": "Zabbix",
+            "script_versions_analyzed": 70,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 70
+            },
+            "versions_with_dependency_issues": 70,
+            "versions_with_command_issues": 70
+        },
+        {
+            "package": "cAdvisor",
+            "script_versions_analyzed": 21,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 20,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 17,
+            "versions_with_command_issues": 21
+        },
+        {
+            "package": "libc6-compat",
+            "script_versions_analyzed": 9,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 8,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 9,
+            "versions_with_command_issues": 9
+        },
+        {
+            "package": "librdkafka",
+            "script_versions_analyzed": 21,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 20,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 21,
+            "versions_with_command_issues": 21
+        },
+        {
+            "package": "netty-tcnative",
+            "script_versions_analyzed": 38,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 37,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 38,
+            "versions_with_command_issues": 38
+        },
+        {
+            "package": "osquery",
+            "script_versions_analyzed": 2,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 1,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 2,
+            "versions_with_command_issues": 2
+        },
+        {
+            "package": "pgvector",
+            "script_versions_analyzed": 7,
+            "overall_status": "version_mismatch",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 1,
+                "version_mismatch": 6,
+                "not_documented": 0
+            },
+            "versions_with_dependency_issues": 7,
+            "versions_with_command_issues": 7
+        },
+        {
+            "package": "strimzi-kafka-bridge",
+            "script_versions_analyzed": 2,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 2
+            },
+            "versions_with_dependency_issues": 2,
+            "versions_with_command_issues": 2
+        },
+        {
+            "package": "strimzi-kafka-operator",
+            "script_versions_analyzed": 3,
+            "overall_status": "not_documented",
+            "status_counts": {
+                "consistent": 0,
+                "partial_discrepancy": 0,
+                "version_mismatch": 0,
+                "not_documented": 3
+            },
+            "versions_with_dependency_issues": 3,
+            "versions_with_command_issues": 3
+        }
+    ]
+}

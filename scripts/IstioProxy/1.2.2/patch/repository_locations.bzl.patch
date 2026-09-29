@@ -1,0 +1,40 @@
+diff --git a/bazel/repository_locations.bzl b/bazel/repository_locations.bzl
+index b7b8a0c..b9781cf 100644
+--- a/bazel/repository_locations.bzl
++++ b/bazel/repository_locations.bzl
+@@ -50,7 +50,7 @@ REPOSITORY_LOCATIONS = dict(
+     com_github_eile_tclap = dict(
+         sha256 = "f0ede0721dddbb5eba3a47385a6e8681b14f155e1129dd39d1a959411935098f",
+         strip_prefix = "tclap-tclap-1-2-1-release-final",
+-        urls = ["https://github.com/eile/tclap/archive/tclap-1-2-1-release-final.tar.gz"],
++        urls = ["https://github.com/mirror/tclap/archive/tclap-1-2-1-release-final.tar.gz"],
+     ),
+     com_github_fmtlib_fmt = dict(
+         sha256 = "4c0741e10183f75d7d6f730b8708a99b329b2f942dad5a9da3385ab92bb4a15c",
+@@ -77,9 +77,10 @@ REPOSITORY_LOCATIONS = dict(
+         # TODO(cmluciano): Bump to release 2.8
+         # This sha is specifically chosen to fix ppc64le builds that require inclusion
+         # of asm/ptrace.h
+-        sha256 = "18574813a062eee487bc1b761e8024a346075a7cb93da19607af362dc09565ef",
+-        strip_prefix = "gperftools-fc00474ddc21fff618fc3f009b46590e241e425e",
+-        urls = ["https://github.com/gperftools/gperftools/archive/fc00474ddc21fff618fc3f009b46590e241e425e.tar.gz"],
++        sha256 = "1ee8c8699a0eff6b6a203e59b43330536b22bbcbe6448f54c7091e5efb0763c9",
++        strip_prefix = "gperftools-2.7",
++        urls = ["https://github.com/gperftools/gperftools/releases/download/gperftools-2.7/gperftools-2.7.tar.gz"],
++
+     ),
+     com_github_grpc_grpc = dict(
+         sha256 = "ba8b08a697b66e14af35da07753583cf32ff3d14dcd768f91b1bbe2e6c07c349",
+@@ -87,9 +88,9 @@ REPOSITORY_LOCATIONS = dict(
+         urls = ["https://github.com/grpc/grpc/archive/v1.20.1.tar.gz"],
+     ),
+     com_github_luajit_luajit = dict(
+-        sha256 = "409f7fe570d3c16558e594421c47bdd130238323c9d6fd6c83dedd2aaeb082a8",
+-        strip_prefix = "LuaJIT-2.1.0-beta3",
+-        urls = ["https://github.com/LuaJIT/LuaJIT/archive/v2.1.0-beta3.tar.gz"],
++        #sha256 = "409f7fe570d3c16558e594421c47bdd130238323c9d6fd6c83dedd2aaeb082a8",
++        strip_prefix = "LuaJIT-2.1",
++        urls = ["https://github.com/linux-on-ibm-z/LuaJIT/archive/v2.1.zip"],
+     ),
+     com_github_nanopb_nanopb = dict(
+         sha256 = "5fb4dab0b7f6a239908407fe07c9d03877cd0502abb637e38c41091cb9c1d438",

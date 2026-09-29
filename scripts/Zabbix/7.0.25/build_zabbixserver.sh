@@ -1,0 +1,268 @@
+#!/usr/bin/env bash
+# © Copyright IBM Corporation 2026.
+# LICENSE: Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+#
+# Instructions:
+# Download build script: wget https://raw.githubusercontent.com/linux-on-ibm-z/scripts/master/Zabbix/7.0.25/build_zabbixserver.sh
+# Execute build script: bash build_zabbixserver.sh    (provide -h for help)
+
+set -e -o pipefail
+
+PACKAGE_NAME="zabbixserver"
+URL_NAME="zabbix"
+PACKAGE_VERSION="7.0.25"
+PHP_VERSION="8.4.6"
+CURDIR="$(pwd)"
+BUILD_DIR="$(pwd)"
+PREFIX="/usr/local"
+CMAKE=$PREFIX/bin/cmake
+PHP_URL="https://www.php.net/distributions/php-${PHP_VERSION}.tar.gz"
+
+FORCE="false"
+TESTS="false"
+SKIP="false"
+source "/etc/os-release"
+DISTRO="$ID-$VERSION_ID"
+LOG_FILE="$CURDIR/logs/${PACKAGE_NAME}-${PACKAGE_VERSION}-${DISTRO}-$(date +"%F-%T").log"
+
+#Check if directory exists
+if [ ! -d "$CURDIR/logs" ]; then
+  mkdir -p "$CURDIR/logs"
+fi
+
+#==============================================================================
+
+error() { echo "Error: ${*}"; exit 1; }
+errlog() { echo "Error: ${*}" |& tee -a "$LOG_FILE"; exit 1; }
+
+msg() { echo "${*}"; }
+log() { echo "${*}" >> "$LOG_FILE"; }
+msglog() { echo "${*}" |& tee -a "$LOG_FILE"; }
+
+
+trap cleanup 0 1 2 ERR
+
+#==============================================================================
+
+
+function checkPrequisites() {
+  if command -v "sudo" >/dev/null; then
+    printf -- 'Sudo : Yes\n' >>"$LOG_FILE"
+  else
+    printf -- 'Sudo : No \n' >>"$LOG_FILE"
+    printf -- 'Sudo is required. Please install it using apt, yum or zypper based on your distro. \n'
+    exit 1
+  fi
+
+  if [[ "$FORCE" == "true" ]]; then
+    printf -- 'Force attribute provided hence continuing with install without confirmation message\n' |& tee -a "$LOG_FILE"
+  else
+    # Ask user for prerequisite installation
+    printf -- "\nAs part of the installation , dependencies would be installed/upgraded.\n"
+    while true; do
+      read -r -p "Do you want to continue (y/n) ? :  " yn
+      case $yn in
+      [Yy]*)
+        printf -- 'User responded with Yes. \n' >>"$LOG_FILE"
+        break
+        ;;
+      [Nn]*) exit ;;
+      *) echo "Please provide confirmation to proceed." ;;
+      esac
+    done
+  fi
+}
+
+function cleanup() {
+  cd $BUILD_DIR
+
+  if [ -f php-$PHP_VERSION.tar.gz ]; then
+    sudo rm -f php-$PHP_VERSION.tar.gz
+  fi
+
+  if [ -d php-$PHP_VERSION ]; then
+    sudo rm -rf php-$PHP_VERSION
+  fi
+
+  if [ -d cmocka ]; then
+    sudo rm -rf cmocka
+  fi
+
+  printf -- 'Cleaned up the artifacts\n' >>"$LOG_FILE"
+}
+
+function runTest() {
+  set +e
+	if [[ "$TESTS" == "true" ]]; then
+		printf -- "TEST Flag is set , Continue with running test \n"
+		cd $BUILD_DIR/$URL_NAME
+		make tests
+		printf -- "Tests completed. \n"
+	fi
+  set -e
+}
+
+function configureAndInstall() {
+  printf -- 'Configuration and Installation started \n'
+  printf -- 'Configuing httpd to enable PHP... \n'
+  # Configure httpd to enable PHP
+  if [[ "$ID" == "sles" ]]; then
+    sudo groupadd --system zabbix || echo "group already exists"
+    sudo useradd --system -g zabbix -d /usr/lib/zabbix -s /sbin/nologin -c "Zabbix Monitoring System" zabbix || echo "user already exists"
+  fi
+
+  if [[ "$ID" == "ubuntu" ]]; then
+    sudo addgroup --system --quiet zabbix || echo "group already exists"
+    sudo adduser --quiet --system --disabled-login --ingroup zabbix --home /var/lib/zabbix --no-create-home zabbix || echo "user already exists"
+    
+    sudo locale-gen en_US en_US.UTF-8
+    sudo dpkg-reconfigure -f noninteractive locales  
+    LANG='en_US.UTF-8'
+    LANGUAGE='en_US.UTF-8'
+  fi
+
+  #Download and install zabbix server
+  printf -- 'Build and install Zabbix server... \n'
+  cd $BUILD_DIR
+  if ! [ -d ${URL_NAME} ]; then
+      git clone -b ${PACKAGE_VERSION} --depth 1 https://github.com/zabbix/zabbix.git
+  fi
+  cd ${URL_NAME}
+  export CFLAGS="-std=gnu99"
+  ./bootstrap.sh tests
+  ./configure --enable-server --enable-agent --enable-proxy --with-mysql --with-unixodbc --enable-ipv6 --with-net-snmp --with-libcurl --with-libxml2 --with-libpcre2
+
+  # Installation
+  make -j$(nproc)
+  make dbschema -j$(nproc)
+  sudo make install
+  
+  #run tests
+  runTest
+
+  #display getting started info
+  gettingStarted
+
+  #cleanup
+  if [[ "$SKIP" != "true" ]]; then
+	cleanup
+	# To remove color prefixes from log
+  sed -i 's/\x1b\[[0-9;]*m//g' $LOG_FILE
+  fi
+}
+
+#==============================================================================
+buildCmocka()
+{
+  printf -- 'Building cmocka... \n'
+  cd "$CURDIR"
+  if [ ! -d cmocka ]; then
+    git clone -b cmocka-1.1.7 https://gitlab.com/cmocka/cmocka.git
+  fi
+  cd cmocka
+  mkdir -p build
+  cd build
+  cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+  sudo make install
+}
+
+function logDetails() {
+  printf -- '**************************** SYSTEM DETAILS *************************************************************\n' >"$LOG_FILE"
+
+  if [ -f "/etc/os-release" ]; then
+    cat "/etc/os-release" >>"$LOG_FILE"
+  fi
+
+  cat /proc/version >>"$LOG_FILE"
+  printf -- '*********************************************************************************************************\n' >>"$LOG_FILE"
+
+  printf -- "Detected %s \n" "$PRETTY_NAME"
+  printf -- "Request details : PACKAGE NAME= %s , VERSION= %s \n" "$PACKAGE_NAME" "$PACKAGE_VERSION" |& tee -a "$LOG_FILE"
+}
+
+# Print the usage message
+function printHelp() {
+  echo
+  echo "Usage: "
+  echo "  bash build_zabbixserver.sh [-d debug] [-y install-without-confirmation] [-t run-tests] [-s skip-cleanup]"
+  echo
+}
+
+while getopts "h?dyts" opt; do
+  case "$opt" in
+  h | \?)
+    printHelp
+    exit 0
+    ;;
+  d)
+    set -x
+    ;;
+  y)
+    FORCE="true"
+    ;;
+  t)
+		TESTS="true"
+		;;
+  s)
+	SKIP="true"
+	;;
+  esac
+done
+
+function gettingStarted() {
+  printf -- "\n* Getting Started * \n"
+  printf -- " Follow the official guide given [here](https://www.zabbix.com/documentation/7.0/en/manual/concepts/agent) to verify the installation. \n"
+  printf -- "\n\nReference: \n"
+  printf -- " More information can be found here : https://www.zabbix.com/documentation/7.0/manual/installation\n"
+  printf -- '\n'
+  printf -- ""
+}
+
+###############################################################################################################
+
+logDetails
+checkPrequisites #Check Prequisites
+
+case "$DISTRO" in
+
+"sles-15.7")
+  printf -- "Installing %s %s for %s \n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$DISTRO" |& tee -a "$LOG_FILE"
+  printf -- 'Installing the dependencies for Zabbix server from repository \n' |& tee -a "$LOG_FILE"
+  sudo zypper install -y wget tar curl vim gcc make net-snmp net-snmp-devel net-tools git apache2 apache2-devel mariadb \
+        libmariadbd-devel apache2-mod_php8 php8 php8-mysql php8-xmlreader php8-xmlwriter php8-gd php8-bcmath php8-mbstring \
+        php8-ctype php8-sockets php8-gettext libcurl-devel libxml2-2 libxml2-devel openldap2-devel php8-ldap unixODBC-devel \
+        libevent-devel pcre-devel pcre2-devel awk gzip automake cmake libyaml-devel perl-YAML-LibYAML perl-Path-Tiny perl-IPC-Run3 \
+        glibc-locale |& tee -a "$LOG_FILE"
+  export LC_CTYPE="en_US.UTF-8"
+
+  buildCmocka |& tee -a "$LOG_FILE"
+  configureAndInstall |& tee -a "$LOG_FILE"
+  ;;
+
+"ubuntu-22.04") 
+  printf -- "Installing %s %s for %s \n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$DISTRO" |& tee -a "$LOG_FILE"
+  printf -- 'Installing the dependencies for Zabbix server from repository \n' |& tee -a "$LOG_FILE"
+  sudo apt-get update >/dev/null
+  sudo DEBIAN_FRONTEND=noninteractive apt-get -y install wget curl vim gcc make pkg-config snmp snmptrapd ceph locales libmariadbd-dev libxml2-dev \
+        libsnmp-dev libcurl4 libcurl4-openssl-dev git apache2 php php-mysql libapache2-mod-php mysql-server php8.1-xml \
+        php8.1-gd php-bcmath php-mbstring php8.1-ldap libevent-dev libpcre3-dev libpcre2-dev automake pkg-config libcmocka-dev unixodbc-dev \
+        libyaml-dev libyaml-libyaml-perl libpath-tiny-perl libipc-run3-perl build-essential |& tee -a "$LOG_FILE"
+  configureAndInstall |& tee -a "$LOG_FILE"
+  ;;
+
+"ubuntu-24.04")
+  printf -- "Installing %s %s for %s \n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$DISTRO" |& tee -a "$LOG_FILE"
+  printf -- 'Installing the dependencies for Zabbix server from repository \n' |& tee -a "$LOG_FILE"
+  sudo apt-get update >/dev/null
+  sudo DEBIAN_FRONTEND=noninteractive apt-get -y install wget curl vim gcc make pkg-config snmp snmptrapd ceph locales libmariadbd-dev libxml2-dev \
+      libsnmp-dev libcurl4 libcurl4-openssl-dev git apache2 php php-mysql libapache2-mod-php mysql-server php8.3-xml \
+      php8.3-gd php-bcmath php-mbstring php8.3-ldap libevent-dev libpcre3-dev libpcre2-dev automake pkg-config libcmocka-dev unixodbc-dev \
+      libyaml-dev libyaml-libyaml-perl libpath-tiny-perl libipc-run3-perl build-essential |& tee -a "$LOG_FILE"
+  configureAndInstall |& tee -a "$LOG_FILE"
+  ;;
+
+*)
+  printf -- "%s not supported \n" "$DISTRO" |& tee -a "$LOG_FILE"
+  exit 1
+  ;;
+esac
